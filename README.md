@@ -1,73 +1,134 @@
-# React + TypeScript + Vite
+# Budget Buddy 💸
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### An Intelligent Financial Dashboard for Students
 
-Currently, two official plugins are available:
+![Budget Buddy Preview](./src/assets/logo.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📖 Overview
 
-## React Compiler
+**Budget Buddy** is a modern, high-fidelity financial dashboard specifically designed to help students track allowances, monitor daily spending habits, and predict when their money will run out. It transforms complex financial tracking into a simple, visual, and insight-driven experience.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛑 The Problem
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+College students often struggle with:
+- Managing limited monthly allowances
+- Tracking daily spending habits accurately
+- Overspending blindly without recognizing patterns
+- Running out of money before the end of the month
+- A lack of clarity on where their money is actually going
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Most existing consumer finance tools are either too complex (built for budgeting mortgages and investments) or not tailored enough for a student's highly variable month-to-month lifestyle.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 💡 The Solution
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Budget Buddy solves these problems by providing:
+- A crystal-clear overview of current financial status
+- Immediate visibility into daily spending velocity
+- **Predictive insights** (e.g., how long the current balance will last if spending continues at the current rate)
+- Goal tracking for short-term savings (like a road trip or a new laptop)
+- Smart suggestions based on real-time spending patterns
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🧩 Key Features
+
+### 🏠 1. Dashboard Overview
+The main dashboard serves as the command center, providing a zero-friction summary of the user's financial health:
+- **Hero Stats:** Total balance, monthly allowance/income, total expenses, and current savings.
+- **Trend Visualization:** A dynamic time-based chart displaying spending trends over the week/month.
+- **Category Breakdown:** A beautiful categorical chart illustrating exactly where money is being spent (Food, Travel, Tech, etc.).
+- **Recent Activity:** A quick-glance feed of the most recent transactions.
+
+### 💳 2. Transactions Management
+A robust ledger for all financial movements:
+- View all detailed financial activities.
+- **Simple Filtering:** Filter lists by category, transaction type, or date.
+- **Search & Sort:** Instantly search for specific merchants or sort by amount/date.
+- **Role-Based UI:**
+  - *Viewer:* Can browse and analyze data.
+  - *Admin:* Granted full control to add, edit, or remove transactions from the ledger.
+
+### 💰 3. Smart Wallet System (Core Interactive Feature)
+The Wallet section transcends traditional balance displays by introducing intelligent financial heuristics:
+- **Available Balance & Safety:** Calculates a rigid "Safe Daily Spending Limit" to ensure funds last until the end of the month.
+- **Survival Prediction:** Estimates exactly how many days the remaining money will last based on current spending velocity.
+- **Calendar-Based Spending UI:** A highlight feature that turns a monthly calendar into a financial heatmap. Days are color-coded by spending intensity (low vs. high). Clicking any date instantly opens a detailed receipt for that specific day.
+- **Card & Subscriptions Management:** A clean UI to track linked bank cards, active monthly subscriptions, and quick-transfer contacts.
+
+### 🎯 4. Goals and Savings Tracking
+An interactive module dedicated to helping users plan and realistically achieve short-term financial targets:
+- Set customizable goals (e.g., Tech upgrades, trips, emergency funds).
+- Visual progress indicators showing exactly how close a goal is to completion.
+- Priority-based tracking ensuring the most important goals get funded first.
+
+### 📊 5. Insights Engine
+Turns raw numbers into actionable advice:
+- Identifies the highest spending category.
+- Provides month-over-month comparative analysis.
+- Generates overspending alerts and warnings when survival prediction drops dangerously low.
+
+---
+
+## 👥 Role-Based Access Control (UI Simulation)
+
+To demonstrate dynamic UI states, Budget Buddy implements a front-end simulated RBAC system, toggled via the Topbar:
+- **Viewer Role:** The interface is locked to Read-Only mode. Add/Edit buttons disappear or are disabled, preventing data mutation.
+- **Admin Role:** Full Write access is granted. The user can add new transactions, create new savings goals, and adjust settings.
+
+---
+
+## 🛠️ Technical Implementation
+
+### Tech Stack
+- **Framework:** React 18 with TypeScript
+- **Build Tool:** Vite for lightning-fast HMR and optimized builds
+- **Styling:** Tailwind CSS v4 for rapid, utility-first UI development
+- **Icons:** Lucide React
+- **Data Visualization:** Recharts for responsive, animated charting
+- **State Management:** React Context API (`AppContext`) for lightweight, efficient global state handling (Dark Mode, RBAC Role, Sidebar state).
+
+### UI/UX Design Approach
+- **Modern & Premium Aesthetics:** Utilizes soft gradients, glassmorphism elements, strict spacing scales, and deep shadows to create a high-trust, premium financial environment.
+- **Responsive:** The layout adapts flawlessly using CSS Grid, Flexbox, and intelligent container sizing, looking great on desktops and scaling down gracefully.
+- **Dark Mode:** A fully deeply-integrated Dark Theme ensures usability in low-light environments, using carefully selected slate and indigo hex tokens.
+
+---
+
+## 🚀 Setup Instructions
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/guru963/Budget-Buddy.git
+   cd finance
+   ```
+
+2. **Install dependencies**
+   Ensure you have Node.js installed, then run:
+   ```bash
+   npm install
+   ```
+
+3. **Start the Development Server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   Navigate to `http://localhost:5173` to view the application.
+
+---
+
+## 📝 Evaluation Criteria Mapping
+
+- **Design and Creativity:** High-fidelity UI using Tailwind, custom gradients, and a unique Calendar Heatmap for spending.
+- **Responsiveness:** Grid-based layouts that adjust to varying viewport widths.
+- **Functionality:** Meets all requirements including Dashboards, Transactions, Insights, and Simulated RBAC.
+- **Technical Quality:** Built with strict TypeScript, modular React components, and dynamic mock data separated cleanly from presentation logic.
+- **State Management:** Uses React Context (`AppContext.tsx`) to lift state cleanly for themes and user roles without prop drilling.
+
+---
+*Developed for evaluation purposes.*
