@@ -4,13 +4,13 @@
 
 ![Budget Buddy Preview](./src/assets/logo.png)
 
-## 📖 Overview
+## Overview
 
 **Budget Buddy** is a modern, high-fidelity financial dashboard specifically designed to help students track allowances, monitor daily spending habits, and predict when their money will run out. It transforms complex financial tracking into a simple, visual, and insight-driven experience.
 
 ---
 
-## 🛑 The Problem
+## The Problem
 
 College students often struggle with:
 - Managing limited monthly allowances
@@ -23,7 +23,7 @@ Most existing consumer finance tools are either too complex (built for budgeting
 
 ---
 
-## 💡 The Solution
+## The Solution
 
 Budget Buddy solves these problems by providing:
 - A crystal-clear overview of current financial status
@@ -34,16 +34,16 @@ Budget Buddy solves these problems by providing:
 
 ---
 
-## 🧩 Key Features
+## Key Features
 
-### 🏠 1. Dashboard Overview
+###  1. Dashboard Overview
 The main dashboard serves as the command center, providing a zero-friction summary of the user's financial health:
 - **Hero Stats:** Total balance, monthly allowance/income, total expenses, and current savings.
 - **Trend Visualization:** A dynamic time-based chart displaying spending trends over the week/month.
 - **Category Breakdown:** A beautiful categorical chart illustrating exactly where money is being spent (Food, Travel, Tech, etc.).
 - **Recent Activity:** A quick-glance feed of the most recent transactions.
 
-### 💳 2. Transactions Management
+###  2. Transactions Management
 A robust ledger for all financial movements:
 - View all detailed financial activities.
 - **Simple Filtering:** Filter lists by category, transaction type, or date.
@@ -52,20 +52,20 @@ A robust ledger for all financial movements:
   - *Viewer:* Can browse and analyze data.
   - *Admin:* Granted full control to add, edit, or remove transactions from the ledger.
 
-### 💰 3. Smart Wallet System (Core Interactive Feature)
+###  3. Smart Wallet System (Core Interactive Feature)
 The Wallet section transcends traditional balance displays by introducing intelligent financial heuristics:
 - **Available Balance & Safety:** Calculates a rigid "Safe Daily Spending Limit" to ensure funds last until the end of the month.
 - **Survival Prediction:** Estimates exactly how many days the remaining money will last based on current spending velocity.
 - **Calendar-Based Spending UI:** A highlight feature that turns a monthly calendar into a financial heatmap. Days are color-coded by spending intensity (low vs. high). Clicking any date instantly opens a detailed receipt for that specific day.
 - **Card & Subscriptions Management:** A clean UI to track linked bank cards, active monthly subscriptions, and quick-transfer contacts.
 
-### 🎯 4. Goals and Savings Tracking
+###  4. Goals and Savings Tracking
 An interactive module dedicated to helping users plan and realistically achieve short-term financial targets:
 - Set customizable goals (e.g., Tech upgrades, trips, emergency funds).
 - Visual progress indicators showing exactly how close a goal is to completion.
 - Priority-based tracking ensuring the most important goals get funded first.
 
-### 📊 5. Insights Engine
+###  5. Insights Engine
 Turns raw numbers into actionable advice:
 - Identifies the highest spending category.
 - Provides month-over-month comparative analysis.
@@ -73,7 +73,7 @@ Turns raw numbers into actionable advice:
 
 ---
 
-## 👥 Role-Based Access Control (UI Simulation)
+##  Role-Based Access Control (UI Simulation)
 
 To demonstrate dynamic UI states, Budget Buddy implements a front-end simulated RBAC system, toggled via the Topbar:
 - **Viewer Role:** The interface is locked to Read-Only mode. Add/Edit buttons disappear or are disabled, preventing data mutation.
@@ -81,7 +81,7 @@ To demonstrate dynamic UI states, Budget Buddy implements a front-end simulated 
 
 ---
 
-## 🛠️ Technical Implementation
+##  Technical Implementation
 
 ### Tech Stack
 - **Framework:** React 18 with TypeScript
@@ -98,7 +98,7 @@ To demonstrate dynamic UI states, Budget Buddy implements a front-end simulated 
 
 ---
 
-## 🚀 Setup Instructions
+##  Setup Instructions
 
 1. **Clone the repository**
    ```bash
@@ -122,7 +122,7 @@ To demonstrate dynamic UI states, Budget Buddy implements a front-end simulated 
 
 ---
 
-## 📝 Evaluation Criteria Mapping
+##  Evaluation Criteria Mapping
 
 - **Design and Creativity:** High-fidelity UI using Tailwind, custom gradients, and a unique Calendar Heatmap for spending.
 - **Responsiveness:** Grid-based layouts that adjust to varying viewport widths.
