@@ -18,10 +18,10 @@
   <img src="./src/assets/one.png" alt="Dashboard View" width="48%" style="border-radius: 10px; margin: 1%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
   <img src="./src/assets/two.png" alt="Wallet View" width="48%" style="border-radius: 10px; margin: 1%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
   <br />
-  <img src="./src/assets/three.png" alt="Transactions View" width="48%" style="border-radius: 10px; margin: 1%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
+  <img src="./src/assets/five.png" alt="Transactions View" width="48%" style="border-radius: 10px; margin: 1%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
   <img src="./src/assets/four.png" alt="Goals View" width="48%" style="border-radius: 10px; margin: 1%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
   <br />
-  <img src="./src/assets/five.png" alt="Insights View" width="48%" style="border-radius: 10px; margin: 1%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
+  <img src="./src/assets/three.png" alt="Insights View" width="48%" style="border-radius: 10px; margin: 1%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
 </div>
 
 ---
