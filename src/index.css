@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  /* Font */
+  --font-sans: "Poppins", sans-serif;
+
+  /* Brand Colors */
+  --color-primary: #7C5CFC;
+  --color-primary-light: #9B85FD;
+  --color-primary-dark: #5E3FDE;
+  --color-primary-50: #F3F0FF;
+  --color-primary-100: #E9E3FF;
+
+  /* Background */
+  --color-bg: #F8F9FC;
+  --color-surface: #FFFFFF;
+  --color-surface-2: #F3F0FF;
+
+  /* Text */
+  --color-text-primary: #1A1D23;
+  --color-text-secondary: #6B7280;
+  --color-text-muted: #9CA3AF;
+
+  /* Status Colors */
+  --color-income: #22C55E;
+  --color-expense: #EF4444;
+  --color-warning: #F59E0B;
+
+  /* Border */
+  --color-border: #E5E7EB;
+  --color-border-light: #F3F4F6;
+
+  /* Dark mode surface */
+  --color-dark-bg: #0F1117;
+  --color-dark-surface: #1A1D23;
+  --color-dark-surface-2: #22262F;
+  --color-dark-border: #2D3139;
+
+  /* Shadows (as custom properties) */
+  --shadow-card: 0 2px 16px rgba(124, 92, 252, 0.06);
+  --shadow-card-hover: 0 8px 32px rgba(124, 92, 252, 0.12);
+
+  /* Border radius */
+  --radius-card: 1.25rem;
+  --radius-pill: 9999px;
+}
+
+/* Base styles */
+* {
+  font-family: var(--font-sans);
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  transition: background-color 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
