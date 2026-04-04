@@ -4,15 +4,15 @@
 
 ![Budget Buddy Preview](./src/assets/logo.png)
 
-**🚀 Live Demo:** [https://budget-buddy-delta-five.vercel.app/](https://budget-buddy-delta-five.vercel.app/)
+**Live Demo:** [https://budget-buddy-delta-five.vercel.app/](https://budget-buddy-delta-five.vercel.app/)
 
-## 📖 Overview
+##  Overview
 
 **Budget Buddy** is a modern, high-fidelity financial dashboard specifically designed to help students track allowances, monitor daily spending habits, and predict when their money will run out. It transforms complex financial tracking into a simple, visual, and insight-driven experience.
 
 ---
 
-## 📸 App Gallery
+##  App Gallery
 
 <div align="center">
   <img src="./src/assets/one.png" alt="Dashboard View" width="48%" style="border-radius: 10px; margin: 1%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
