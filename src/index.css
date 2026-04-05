@@ -43,6 +43,9 @@
   /* Border radius */
   --radius-card: 1.25rem;
   --radius-pill: 9999px;
+
+  /* Screen Breakpoints */
+  --breakpoint-xl: 1200px;
 }
 
 /* Base styles */

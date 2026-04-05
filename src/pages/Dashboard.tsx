@@ -351,7 +351,7 @@ export default function Dashboard() {
 
       {/* ── Summary Cards ── */}
       {widgets.summaryCards ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {summaryCards.map((card) => <SummaryCard key={card.label} {...card} dark={darkMode} />)}
         </div>
       ) : (
@@ -359,7 +359,7 @@ export default function Dashboard() {
       )}
 
       {/* ── Middle row ── */}
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-5" key={refreshKey}>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5" key={refreshKey}>
         {widgets.moneyFlow
           ? <MoneyFlowChart dark={darkMode} timeRange={timeRange} setTimeRange={setTimeRange} account={account} setAccount={setAccount} ranges={ranges} accounts={accounts} />
           : <EmptyWidget label="Money Flow" dark={darkMode} />}
@@ -369,7 +369,7 @@ export default function Dashboard() {
       </div>
 
       {/* ── Bottom row ── */}
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         {widgets.recentTransactions
           ? <RecentTransactions dark={darkMode} />
           : <EmptyWidget label="Recent Transactions" dark={darkMode} />}
