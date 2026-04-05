@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { Mail, Lock, LogIn } from "lucide-react";
+import { Mail, Lock } from "lucide-react";
 import Logo from "../assets/logo.png";
 import { useApp } from "../context/AppContext";
 
@@ -9,27 +9,22 @@ export default function Login() {
   const { login } = useApp();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
     // Simulate login
     setTimeout(() => {
       login();
       navigate("/");
-      setLoading(false);
     }, 1500);
   };
 
   const useDemoAccount = () => {
     setEmail("demo@budgetbuddy.com");
     setPassword("password123");
-    setLoading(true);
     setTimeout(() => {
       login();
       navigate("/");
-      setLoading(false);
     }, 1000);
   };
 
@@ -74,7 +69,6 @@ export default function Login() {
             <div className="space-y-1">
               <div className="flex justify-between items-center ml-1">
                 <label className="text-[13px] font-bold text-text-secondary uppercase tracking-widest">Password</label>
-                <a href="#" className="text-[13px] font-bold text-primary hover:text-primary-dark transition-colors">Forgot Password?</a>
               </div>
               <div className="relative group">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-text-muted group-focus-within:text-primary transition-colors">
@@ -90,26 +84,14 @@ export default function Login() {
                 />
               </div>
             </div>
-
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full py-3 px-4 bg-primary hover:bg-primary-dark text-white rounded-xl font-bold shadow-lg shadow-primary/25 transform active:scale-[0.98] transition-all flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed text-sm"
-            >
-              {loading ? (
-                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-              ) : (
-                <>
-                  <span>Sign In</span>
-                  <LogIn size={16} className="-rotate-90 group-hover:translate-x-1 transition-transform" />
-                </>
-              )}
-            </button>
           </form>
 
 
           {/* Demo Link */}
           <div className="mt-3 text-center pt-5 border-t border-gray-50 flex flex-col items-center">
+            <p className="text-[12px] font-black text-primary uppercase tracking-[2px] mb-3 animate-pulse">
+              Click below to explore right now!
+            </p>
             <button
               onClick={useDemoAccount}
               className="w-full py-4 bg-[#7C5CFC] text-white rounded-xl text-[14px] font-black uppercase tracking-[2px] shadow-[0_8px_40px_rgba(124,92,252,0.45)] border-none mb-4 active:scale-95 transition-transform"
