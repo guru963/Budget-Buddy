@@ -1,4 +1,4 @@
-import { Search, Bell, Sun, Moon, Shield, Eye } from "lucide-react";
+import { Search, Bell, Sun, Moon, Shield, Eye, Menu } from "lucide-react";
 import { useApp } from "../../context/AppContext";
 import { useEffect, useState, useRef } from "react";
 
@@ -9,7 +9,7 @@ const NOTIFS = [
 ];
 
 export default function Topbar() {
-    const { darkMode, toggleDarkMode, role, setRole } = useApp();
+    const { darkMode, toggleDarkMode, role, setRole, setMobileMenuOpen } = useApp();
     const [showNotifs, setShowNotifs] = useState(false);
     const [notifs, setNotifs] = useState(NOTIFS);
     const notifRef = useRef<HTMLDivElement>(null);
@@ -28,34 +28,46 @@ export default function Topbar() {
 
     return (
         <header
-            className="fixed top-0 right-0 z-30 flex items-center justify-between px-6 py-3"
+            className="fixed top-0 right-0 z-30 flex items-center justify-between px-4 lg:px-6 py-3"
             style={{
-                left: "var(--sidebar-width, 220px)",
+                left: "var(--sidebar-width, 0px)",
                 height: "64px",
                 background: darkMode ? "#1A1D23" : "#F8F9FC",
                 borderBottom: `1px solid ${darkMode ? "#2D3139" : "#E5E7EB"}`,
                 transition: "left 0.3s ease",
             }}
         >
-            {/* Search */}
-            <div
-                className="flex items-center gap-2 px-4 py-2 rounded-xl w-72"
-                style={{
-                    background: darkMode ? "#22262F" : "white",
-                    border: `1px solid ${darkMode ? "#2D3139" : "#E5E7EB"}`,
-                    boxShadow: "0 1px 4px rgba(0,0,0,0.04)",
-                }}
-            >
-                <Search size={15} color="#9CA3AF" />
-                <input
-                    type="text"
-                    placeholder="Search transactions..."
-                    className="bg-transparent text-sm outline-none w-full placeholder:text-gray-400"
+            <div className="flex items-center gap-3">
+                <button 
+                    onClick={() => setMobileMenuOpen(true)}
+                    className="lg:hidden p-2 rounded-xl text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800"
+                >
+                    <Menu size={20} />
+                </button>
+
+                {/* Search - Hide on mobile if space is tight */}
+                <div
+                    className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl w-48 lg:w-72"
                     style={{
-                        color: darkMode ? "#E5E7EB" : "#1A1D23",
-                        fontFamily: "Poppins, sans-serif",
+                        background: darkMode ? "#22262F" : "white",
+                        border: `1px solid ${darkMode ? "#2D3139" : "#E5E7EB"}`,
+                        boxShadow: "0 1px 4px rgba(0,0,0,0.04)",
                     }}
-                />
+                >
+                    <Search size={15} color="#9CA3AF" />
+                    <input
+                        type="text"
+                        placeholder="Search..."
+                        className="bg-transparent text-sm outline-none w-full placeholder:text-gray-400"
+                        style={{
+                            color: darkMode ? "#E5E7EB" : "#1A1D23",
+                            fontFamily: "Poppins, sans-serif",
+                        }}
+                    />
+                </div>
+                <button className="sm:hidden p-2 rounded-xl text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800">
+                    <Search size={20} />
+                </button>
             </div>
 
             {/* Right side */}

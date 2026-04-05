@@ -17,14 +17,14 @@ export default function Layout() {
             <Sidebar />
             <Topbar />
             <main
-                className="transition-all duration-300"
+                className="transition-all duration-300 mx-auto"
                 style={{
-                    marginLeft: "var(--sidebar-width, 220px)",
+                    marginLeft: "var(--sidebar-width, 0px)",
                     minHeight: "100vh",
                     paddingTop: "var(--topbar-height, 64px)",
                 }}
             >
-                <div className="p-8">
+                <div className="p-4 sm:p-6 lg:p-8 max-w-[1600px] mx-auto">
                     <Outlet />
                 </div>
             </main>

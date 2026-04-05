@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Mail, Lock, LogIn } from "lucide-react";
 import Logo from "../assets/logo.png";
+import { useApp } from "../context/AppContext";
 
 export default function Login() {
   const navigate = useNavigate();
+  const { login } = useApp();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -14,6 +16,7 @@ export default function Login() {
     setLoading(true);
     // Simulate login
     setTimeout(() => {
+      login();
       navigate("/");
       setLoading(false);
     }, 1500);
@@ -24,6 +27,7 @@ export default function Login() {
     setPassword("password123");
     setLoading(true);
     setTimeout(() => {
+      login();
       navigate("/");
       setLoading(false);
     }, 1000);
@@ -105,10 +109,11 @@ export default function Login() {
 
 
           {/* Demo Link */}
-          <div className="mt-3 text-center pt-5 border-t border-gray-50">
+          <div className="mt-3 text-center pt-5 border-t border-gray-50 flex flex-col items-center">
             <button
               onClick={useDemoAccount}
-              className="px-4 py-1.5 bg-primary/5 text-primary rounded-lg text-[10px] font-bold uppercase tracking-widest hover:bg-primary/10 transition-colors border border-primary/10 mb-4"
+              className="w-full py-4 bg-[#7C5CFC] text-white rounded-xl text-[14px] font-black uppercase tracking-[2px] shadow-[0_8px_40px_rgba(124,92,252,0.45)] border-none mb-4 active:scale-95 transition-transform"
+              style={{ filter: "brightness(1.1)" }}
             >
               Use Demo Account
             </button>

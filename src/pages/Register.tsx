@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Mail, Lock, LogIn, User, Check } from "lucide-react";
 import Logo from "../assets/logo.png";
+import { useApp } from "../context/AppContext";
 
 export default function Register() {
   const navigate = useNavigate();
+  const { login } = useApp();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,6 +17,7 @@ export default function Register() {
     setLoading(true);
     // Simulate registration
     setTimeout(() => {
+      login();
       navigate("/");
       setLoading(false);
     }, 1500);

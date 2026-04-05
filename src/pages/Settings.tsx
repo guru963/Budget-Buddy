@@ -15,6 +15,7 @@ import {
   Check,
 } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 /* ─────────────────────────────────────────────────────────────────────────── */
 /*  DESIGN TOKENS                                                              */
@@ -86,9 +87,15 @@ function SectionHeading({ title }: { title: string }) {
 /*  MAIN SETTINGS PAGE                                                         */
 /* ─────────────────────────────────────────────────────────────────────────── */
 export default function Settings() {
-  const { darkMode, toggleDarkMode, role } = useApp();
+  const { darkMode, toggleDarkMode, role, logout } = useApp();
+  const navigate = useNavigate();
   const [notifications, setNotifications] = useState(true);
   const [biometrics, setBiometrics] = useState(true);
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
 
   return (
     <div className="flex flex-col gap-6 w-full pb-12 pt-2 max-w-[900px] mx-auto px-4 md:px-6">
@@ -301,6 +308,7 @@ export default function Settings() {
           {/* Support & Logout */}
           <div className="pt-4 space-y-3">
             <button
+              onClick={handleLogout}
               className="w-full flex items-center justify-center gap-3 p-4 rounded-2xl transition-all duration-200"
               style={{
                 background: darkMode ? "rgba(239, 68, 68, 0.08)" : "#FEF2F2",

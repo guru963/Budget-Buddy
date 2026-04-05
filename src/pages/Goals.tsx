@@ -532,8 +532,8 @@ export default function Goals() {
         )}
       </div>
 
-      {/* ━━━━━━━━ STATS ROW — Smaller total expense card, bigger bank cards ━━━━━━━━ */}
-      <div className="grid grid-cols-4 gap-4">
+      {/* ━━━━━━━━ STATS ROW ━━━━━━━━ */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Total Saved — Smaller card (col-span-1) */}
         <div className="rounded-[20px] p-5 transition-all duration-200 hover:shadow-md col-span-1" style={cardStyle}>
           <div className="flex items-center justify-between mb-3">

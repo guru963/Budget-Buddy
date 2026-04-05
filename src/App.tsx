@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Dashboard from "./pages/Dashboard";
 import Transactions from "./pages/Transactions";
@@ -10,14 +10,25 @@ import Settings from "./pages/Settings";
 import Help from "./pages/Help";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import { useApp } from "./context/AppContext";
+
+function ProtectedRoute({ children }: { children: React.ReactNode }) {
+  const { isAuthenticated } = useApp();
+  return isAuthenticated ? <>{children}</> : <Navigate to="/login" />;
+}
+
+function AuthRoute({ children }: { children: React.ReactNode }) {
+  const { isAuthenticated } = useApp();
+  return !isAuthenticated ? <>{children}</> : <Navigate to="/" />;
+}
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/" element={<Layout />}>
+        <Route path="/login" element={<AuthRoute><Login /></AuthRoute>} />
+        <Route path="/register" element={<AuthRoute><Register /></AuthRoute>} />
+        <Route path="/" element={<ProtectedRoute><Layout /></ProtectedRoute>}>
           <Route index element={<Dashboard />} />
           <Route path="transactions" element={<Transactions />} />
           <Route path="wallet" element={<Wallet />} />

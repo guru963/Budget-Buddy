@@ -9,6 +9,11 @@ interface AppContextType {
     setRole: (role: Role) => void;
     sidebarCollapsed: boolean;
     setSidebarCollapsed: (collapsed: boolean) => void;
+    mobileMenuOpen: boolean;
+    setMobileMenuOpen: (open: boolean) => void;
+    isAuthenticated: boolean;
+    login: () => void;
+    logout: () => void;
 }
 
 const AppContext = createContext<AppContextType | null>(null);
@@ -17,6 +22,11 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     const [darkMode, setDarkMode] = useState(false);
     const [role, setRole] = useState<Role>("viewer");
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+    const login = () => setIsAuthenticated(true);
+    const logout = () => setIsAuthenticated(false);
 
     return (
         <AppContext.Provider
@@ -27,6 +37,11 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
                 setRole,
                 sidebarCollapsed,
                 setSidebarCollapsed,
+                mobileMenuOpen,
+                setMobileMenuOpen,
+                isAuthenticated,
+                login,
+                logout,
             }}
         >
             {children}
